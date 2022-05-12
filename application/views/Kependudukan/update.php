@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Tambah Data Kependudukan</h1>
+                    <h1>Edit Data Kependudukan</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -29,26 +29,26 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form role="form" action="<?= base_url('cKependudukan/create') ?>" method="POST">
+                        <form role="form" action="<?= base_url('cKependudukan/update/' . $penduduk->id_penduduk) ?>" method="POST">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">No Kartu Keluarga</label>
-                                    <input type="text" value="<?= set_value('no_kk') ?>" name="no_kk" class="form-control" id="exampleInputEmail1" placeholder="Enter No KK">
+                                    <input type="text" value="<?= $penduduk->no_kk ?>" name="no_kk" class="form-control" id="exampleInputEmail1" placeholder="Enter No KK">
                                     <?= form_error('no_kk', '<small class="text-danger">', '</small>') ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Nama Kepala Keluarga</label>
-                                    <input type="text" name="nama" value="<?= set_value('nama') ?>" class="form-control" id="exampleInputPassword1" placeholder="Enter Kepala Keluarga">
+                                    <input type="text" name="nama" value="<?= $penduduk->nama_kk ?>" class="form-control" id="exampleInputPassword1" placeholder="Enter Kepala Keluarga">
                                     <?= form_error('nama', '<small class="text-danger">', '</small>') ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Nama Istri</label>
-                                    <input type="text" name="nama_istri" value="<?= set_value('nama_istri') ?>" class="form-control" id="exampleInputPassword1" placeholder="Enter Istri">
+                                    <input type="text" name="nama_istri" value="<?= $penduduk->nama_ibu ?>" class="form-control" id="exampleInputPassword1" placeholder="Enter Istri">
                                     <?= form_error('nama_istri', '<small class="text-danger">', '</small>') ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Jumlah Anak</label>
-                                    <input type="number" name="jml" value="<?= set_value('jml') ?>" class="form-control" id="exampleInputPassword1" placeholder="Enter Jumlah Anak">
+                                    <input type="number" name="jml" value="<?= $penduduk->jumlah_anak ?>" class="form-control" id="exampleInputPassword1" placeholder="Enter Jumlah Anak">
                                     <?= form_error('jml', '<small class="text-danger">', '</small>') ?>
                                 </div>
                                 <div class="row">
@@ -57,34 +57,34 @@
                                             <label for="exampleInputPassword1">RT</label>
                                             <select name="rt" class="form-control">
                                                 <option value="">---Pilih RT---</option>
-                                                <option value="01" <?php if (set_value('rt') == '01') {
+                                                <option value="01" <?php if ($penduduk->rt == '01') {
                                                                         echo 'selected';
                                                                     } ?>>01</option>
-                                                <option value="02" <?php if (set_value('rt') == '02') {
+                                                <option value="02" <?php if ($penduduk->rt == '02') {
                                                                         echo 'selected';
                                                                     } ?>>02</option>
-                                                <option value="03" <?php if (set_value('rt') == '03') {
+                                                <option value="03" <?php if ($penduduk->rt == '03') {
                                                                         echo 'selected';
                                                                     } ?>>03</option>
-                                                <option value="04" <?php if (set_value('rt') == '04') {
+                                                <option value="04" <?php if ($penduduk->rt == '04') {
                                                                         echo 'selected';
                                                                     } ?>>04</option>
-                                                <option value="05" <?php if (set_value('rt') == '05') {
+                                                <option value="05" <?php if ($penduduk->rt == '05') {
                                                                         echo 'selected';
                                                                     } ?>>05</option>
-                                                <option value="06" <?php if (set_value('rt') == '06') {
+                                                <option value="06" <?php if ($penduduk->rt == '06') {
                                                                         echo 'selected';
                                                                     } ?>>06</option>
-                                                <option value="07" <?php if (set_value('rt') == '07') {
+                                                <option value="07" <?php if ($penduduk->rt == '07') {
                                                                         echo 'selected';
                                                                     } ?>>07</option>
-                                                <option value="08" <?php if (set_value('rt') == '08') {
+                                                <option value="08" <?php if ($penduduk->rt == '08') {
                                                                         echo 'selected';
                                                                     } ?>>08</option>
-                                                <option value="09" <?php if (set_value('rt') == '09') {
+                                                <option value="09" <?php if ($penduduk->rt == '09') {
                                                                         echo 'selected';
                                                                     } ?>>09</option>
-                                                <option value="10" <?php if (set_value('rt') == '10') {
+                                                <option value="10" <?php if ($penduduk->rt == '10') {
                                                                         echo 'selected';
                                                                     } ?>>10</option>
                                             </select>
@@ -96,22 +96,22 @@
                                             <label for="exampleInputPassword1">RW</label>
                                             <select name="rw" class="form-control">
                                                 <option value="">---Pilih RW---</option>
-                                                <option value="01" <?php if (set_value('rw') == '01') {
+                                                <option value="01" <?php if ($penduduk->rw == '01') {
                                                                         echo 'selected';
                                                                     } ?>>01</option>
-                                                <option value="02" <?php if (set_value('rw') == '02') {
+                                                <option value="02" <?php if ($penduduk->rw == '02') {
                                                                         echo 'selected';
                                                                     } ?>>02</option>
-                                                <option value="03" <?php if (set_value('rw') == '03') {
+                                                <option value="03" <?php if ($penduduk->rw == '03') {
                                                                         echo 'selected';
                                                                     } ?>>03</option>
-                                                <option value="04" <?php if (set_value('rw') == '04') {
+                                                <option value="04" <?php if ($penduduk->rw == '04') {
                                                                         echo 'selected';
                                                                     } ?>>04</option>
-                                                <option value="05" <?php if (set_value('rw') == '05') {
+                                                <option value="05" <?php if ($penduduk->rw == '05') {
                                                                         echo 'selected';
                                                                     } ?>>05</option>
-                                                <option value="06" <?php if (set_value('rw') == '06') {
+                                                <option value="06" <?php if ($penduduk->rw == '06') {
                                                                         echo 'selected';
                                                                     } ?>>06</option>
                                             </select>
@@ -121,7 +121,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Alamat</label>
-                                    <input type="text" value="<?= set_value('alamat') ?>" name="alamat" class="form-control" id="exampleInputPassword1" placeholder="Enter Alamat">
+                                    <input type="text" value="<?= $penduduk->alamat ?>" name="alamat" class="form-control" id="exampleInputPassword1" placeholder="Enter Alamat">
                                     <?= form_error('alamat', '<small class="text-danger">', '</small>') ?>
                                 </div>
                             </div>

@@ -14,9 +14,18 @@
                     </ol>
                 </div>
             </div>
-            <a class="btn btn-app">
+            <a href="<?= base_url('cKependudukan/create') ?>" class="btn btn-app">
                 <i class="fas fa-feather"></i> Tambah Penduduk
             </a>
+            <?php
+            if ($this->session->userdata('success')) {
+                echo '<div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h5><i class="icon fas fa-check"></i> Alert!</h5>';
+                echo $this->session->userdata('success');
+                echo ' </div>';
+            }
+            ?>
         </div><!-- /.container-fluid -->
     </section>
 
@@ -46,17 +55,31 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($penduduk as $key => $value) {
+                                    ?>
+                                        <tr>
+                                            <td><?= $no++ ?>.</td>
+                                            <td><?= $value->no_kk ?></td>
+                                            <td><?= $value->nama_kk ?></td>
+                                            <td><?= $value->nama_ibu ?></td>
+                                            <td><?= $value->jumlah_anak ?></td>
+                                            <td><?= $value->rt ?></td>
+                                            <td><?= $value->rw ?></td>
+                                            <td><?= $value->alamat ?></td>
+                                            <td class="text-center">
+                                                <a class="btn btn-success" href="<?= base_url('cKependudukan/update/' . $value->id_penduduk) ?>">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <a class="btn btn-danger" href="<?= base_url('cKependudukan/delete/' . $value->id_penduduk) ?>">
+                                                    <i class="fas fa-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
                                 </tbody>
                                 <tfoot>
                                     <tr>
