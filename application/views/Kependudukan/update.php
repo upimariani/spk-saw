@@ -48,8 +48,27 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Jumlah Anak</label>
-                                    <input type="number" name="jml" value="<?= $penduduk->jumlah_anak ?>" class="form-control" id="exampleInputPassword1" placeholder="Enter Jumlah Anak">
-                                    <?= form_error('jml', '<small class="text-danger">', '</small>') ?>
+                                    <select name="jml" class="form-control">
+                                        <option value="">---Pilih Jumlah Anak---</option>
+                                        <option value="1" <?php if ($penduduk->jumlah_anak == '1') {
+                                                                echo 'selected';
+                                                            } ?>>01</option>
+                                        <option value="2" <?php if ($penduduk->jumlah_anak == '2') {
+                                                                echo 'selected';
+                                                            } ?>>02</option>
+                                        <option value="3" <?php if ($penduduk->jumlah_anak == '3') {
+                                                                echo 'selected';
+                                                            } ?>>03</option>
+                                        <option value="4" <?php if ($penduduk->jumlah_anak == '4') {
+                                                                echo 'selected';
+                                                            } ?>>04</option>
+                                        <option value="5" <?php if ($penduduk->jumlah_anak == '5') {
+                                                                echo 'selected';
+                                                            } ?>>05</option>
+                                        <option value="6" <?php if ($penduduk->jumlah_anak == '6') {
+                                                                echo 'selected';
+                                                            } ?>>Lebih dari 05</option>
+                                    </select> <?= form_error('jml', '<small class="text-danger">', '</small>') ?>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">

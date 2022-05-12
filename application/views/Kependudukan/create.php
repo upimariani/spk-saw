@@ -48,7 +48,27 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Jumlah Anak</label>
-                                    <input type="number" name="jml" value="<?= set_value('jml') ?>" class="form-control" id="exampleInputPassword1" placeholder="Enter Jumlah Anak">
+                                    <select name="jml" class="form-control">
+                                        <option value="">---Pilih Jumlah Anak---</option>
+                                        <option value="1" <?php if (set_value('jml') == '1') {
+                                                                echo 'selected';
+                                                            } ?>>01</option>
+                                        <option value="2" <?php if (set_value('jml') == '2') {
+                                                                echo 'selected';
+                                                            } ?>>02</option>
+                                        <option value="3" <?php if (set_value('jml') == '3') {
+                                                                echo 'selected';
+                                                            } ?>>03</option>
+                                        <option value="4" <?php if (set_value('jml') == '4') {
+                                                                echo 'selected';
+                                                            } ?>>04</option>
+                                        <option value="5" <?php if (set_value('jml') == '5') {
+                                                                echo 'selected';
+                                                            } ?>>05</option>
+                                        <option value="6" <?php if (set_value('jml') == '6') {
+                                                                echo 'selected';
+                                                            } ?>>Lebih dari 05</option>
+                                    </select>
                                     <?= form_error('jml', '<small class="text-danger">', '</small>') ?>
                                 </div>
                                 <div class="row">

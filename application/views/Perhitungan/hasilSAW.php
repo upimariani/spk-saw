@@ -14,7 +14,7 @@
                     </ol>
                 </div>
             </div>
-            <a class="btn btn-app">
+            <a href="<?= base_url('cMetodeSAW/hitung') ?>" class="btn btn-app">
                 <i class="fas fa-calculator"></i>Hitung
             </a>
         </div><!-- /.container-fluid -->
