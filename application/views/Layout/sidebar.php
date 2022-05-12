@@ -54,10 +54,20 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
+                            <a href="<?= base_url('cDashboard') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'cDashboard') {
+                                                                                        echo 'active';
+                                                                                    }  ?>">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="<?= base_url('cAdmin') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'cAdmin') {
                                                                                     echo 'active';
                                                                                 }  ?>">
-                                <i class="nav-icon fas fa-box"></i>
+                                <i class="nav-icon fas fa-user"></i>
                                 <p>
                                     Kelola Data Admin
                                 </p>
@@ -67,9 +77,9 @@
                             <a href="<?= base_url('cKependudukan') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'cKependudukan') {
                                                                                             echo 'active';
                                                                                         }  ?>">
-                                <i class="nav-icon fas fa-bars"></i>
+                                <i class="nav-icon fas fa-users"></i>
                                 <p>
-                                    Kelola Data Kependudukan
+                                    Kependudukan
                                 </p>
                             </a>
                         </li>
@@ -78,9 +88,9 @@
                             <a href="<?= base_url('cMetodeSAW') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'cMetodeSAW') {
                                                                                         echo 'active';
                                                                                     }  ?>">
-                                <i class="nav-icon fas fa-cart-arrow-down"></i>
+                                <i class="nav-icon fas fa-server"></i>
                                 <p>
-                                    Perhitungan SPK Metode SAW
+                                    Perhitungan SPK
                                 </p>
                             </a>
                         </li>

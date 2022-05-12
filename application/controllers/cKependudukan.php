@@ -6,6 +6,10 @@ class cKependudukan extends CI_Controller
 
     public function index()
     {
+        $this->load->view('Layout/head');
+        $this->load->view('Layout/sidebar');
+        $this->load->view('Kependudukan/penduduk');
+        $this->load->view('Layout/footer');
     }
 }
 
