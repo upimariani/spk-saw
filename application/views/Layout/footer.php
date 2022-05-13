@@ -86,6 +86,9 @@
 
         $(".tanggungan").html($(this).find(':selected').attr('data-tanggungan'));
         $(".tanggungan").val($(this).find(':selected').attr('data-tanggungan'));
+
+        $(".b_anak").html($(this).find(':selected').attr('data-bobot'));
+        $(".b_anak").val($(this).find(':selected').attr('data-bobot'));
     });
 </script>
 <script>
